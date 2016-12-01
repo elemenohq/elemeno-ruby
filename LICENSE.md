@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2016 Chris Erwin
+Copyright (c) 2016 Elemeno Technology Inc. (https://elemeno.io)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

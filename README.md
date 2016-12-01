@@ -1,8 +1,13 @@
 # Elemeno
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/elemeno`. To experiment with that code, run `bin/console` for an interactive prompt.
+The official Ruby client for Elemeno, an API based CMS. Use this module to easily integrate your content created on Elemeno into your Ruby projects.
 
-TODO: Delete this and the text above, and describe your gem
+Create an account and get started for free at https://elemeno.io
+
+## Requirements
+
+- A minimum of Ruby 1.9.3
+- [Bundler](http://bundler.io/)
 
 ## Installation
 
@@ -20,22 +25,126 @@ Or install it yourself as:
 
     $ gem install elemeno
 
+## Elemeno Documentation
+
+Documentation is available at http://docs.elemeno.io
+
 ## Usage
 
-TODO: Write usage instructions here
+Include the Elemeno module:
 
-## Development
+```ruby
+require "elemeno"
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Create a new instance of the Elemeno Client with an API Key from your project
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+elemeno = Elemeno::Client.new('123e4567-e89b-12d3-a456-426655440000')
+```
 
-## Contributing
+**Note: API keys can be created in your project settings**
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/elemenohq/elemeno-ruby.
+## Example Usage
 
+```ruby
+require "elemeno"
 
-## License
+elemeno = Elemeno::Client.new('123e4567-e89b-12d3-a456-426655440000')
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+options = {
+	'filters': {
+		'$title': {
+			'$contains': 'pie'
+		}
+	},
+	'sort': {
+		'$datePublished': 'ASC'
+	},
+	'page': 1,
+	'size': 20
+}
 
+collectionItems = elemeno.getCollectionItems('recipes', options);
+```
+
+## API Overview
+
+### Singles
+
+#### `elemeno.getSingles([options])`
+
+```ruby
+options = {
+	'sort': {
+		'$dateUpdated': 'DESC'
+	},
+	'page': 1,
+	'size': 20
+}
+
+singles = elemeno.getSingles(options)
+```
+
+#### `elemeno.getSingle(singleSlug)`
+
+```ruby
+single = elemeno.getSingle('about')
+```
+
+### Collections
+
+#### `elemeno.getCollections([options])`
+
+```ruby
+options = {
+	'sort': {
+		'$dateCreated': 'DESC'
+	},
+	'page': 1,
+	'size': 20
+}
+
+collections = `elemeno.getCollections(options)
+```
+
+#### `elemeno.getCollection(collectionSlug)`
+
+```ruby
+collection = `elemeno.getCollection('recipes')
+```
+
+#### `elemeno.getCollectionItems(collectionSlug, [options])`
+
+```ruby
+options = {
+	'filters': {
+		'$title': {
+			'$contains': 'pie'
+		}
+	},
+	'sort': {
+		'$datePublished': 'ASC'
+	},
+	'page': 1,
+	'size': 20
+}
+
+collectionItems = elemeno.getCollectionsItems('recipes', options)
+```
+
+#### `elemeno.getCollectionItems(collectionSluge, itemSlug, [options])`
+
+```ruby
+collectionItem = elemeno.getCollectionItem('recipes', 'applie-pie')
+```
+
+or `byId`:
+
+```ruby
+options = {
+	'byId': true
+}
+
+collectionItem = elemeno.getCollectionItem('recipes', '281cf9b2-b355-11e6-b10e-5b3ff757fea2', options)
+```

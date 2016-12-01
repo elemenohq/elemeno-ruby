@@ -9,7 +9,7 @@ module Elemeno
 		@@collectionBase = 'collections/'
 
 		def initialize(api_key)
-			@conn = Faraday.new :url => 'http://api.elemeno.dev/v1/', :headers => {'Authorization' => api_key}
+			@conn = Faraday.new :url => 'http://api.elemeno.io/v1/', :headers => {'Authorization' => api_key}
 		end
 
 		private def get(path, query = nil)

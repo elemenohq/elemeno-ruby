@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Official Ruby Client for Elemeno, an API based CMS.}
   spec.homepage      = "https://elemeno.io"
   spec.license       = "MIT"
+  spec.required_ruby_version = '>= 1.9'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
