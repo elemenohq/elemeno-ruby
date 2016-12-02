@@ -65,7 +65,7 @@ options = {
 	'size': 20
 }
 
-collectionItems = elemeno.getCollectionItems('recipes', options);
+collectionItems = elemeno.getCollectionItems('recipes', options)
 ```
 
 ## API Overview
