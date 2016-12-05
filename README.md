@@ -105,13 +105,13 @@ options = {
 	'size': 20
 }
 
-collections = `elemeno.getCollections(options)
+collections = elemeno.getCollections(options)
 ```
 
 #### `elemeno.getCollection(collectionSlug)`
 
 ```ruby
-collection = `elemeno.getCollection('recipes')
+collection = elemeno.getCollection('recipes')
 ```
 
 #### `elemeno.getCollectionItems(collectionSlug, [options])`
@@ -130,13 +130,13 @@ options = {
 	'size': 20
 }
 
-collectionItems = elemeno.getCollectionsItems('recipes', options)
+collectionItems = elemeno.getCollectionItems('recipes', options)
 ```
 
-#### `elemeno.getCollectionItems(collectionSluge, itemSlug, [options])`
+#### `elemeno.getCollectionItems(collectionSlug, itemSlug, [options])`
 
 ```ruby
-collectionItem = elemeno.getCollectionItem('recipes', 'applie-pie')
+collectionItem = elemeno.getCollectionItem('recipes', 'apple-pie')
 ```
 
 or `byId`:
