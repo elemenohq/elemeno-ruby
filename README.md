@@ -66,6 +66,8 @@ options = {
 }
 
 collectionItems = elemeno.getCollectionItems('recipes', options)
+
+puts collectionItems
 ```
 
 ## API Overview
@@ -84,12 +86,16 @@ options = {
 }
 
 singles = elemeno.getSingles(options)
+
+puts singles
 ```
 
 #### `elemeno.getSingle(singleSlug)`
 
 ```ruby
 single = elemeno.getSingle('about')
+
+puts single
 ```
 
 ### Collections
@@ -106,12 +112,16 @@ options = {
 }
 
 collections = elemeno.getCollections(options)
+
+puts collections
 ```
 
 #### `elemeno.getCollection(collectionSlug)`
 
 ```ruby
 collection = elemeno.getCollection('recipes')
+
+puts collection
 ```
 
 #### `elemeno.getCollectionItems(collectionSlug, [options])`
@@ -131,12 +141,16 @@ options = {
 }
 
 collectionItems = elemeno.getCollectionItems('recipes', options)
+
+puts collectionItems
 ```
 
 #### `elemeno.getCollectionItems(collectionSlug, itemSlug, [options])`
 
 ```ruby
 collectionItem = elemeno.getCollectionItem('recipes', 'apple-pie')
+
+puts collectionItem
 ```
 
 or `byId`:
@@ -147,4 +161,6 @@ options = {
 }
 
 collectionItem = elemeno.getCollectionItem('recipes', '281cf9b2-b355-11e6-b10e-5b3ff757fea2', options)
+
+puts collectionItem
 ```
