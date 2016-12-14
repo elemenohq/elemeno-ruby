@@ -145,7 +145,7 @@ collectionItems = elemeno.getCollectionItems('recipes', options)
 puts collectionItems
 ```
 
-#### `elemeno.getCollectionItems(collectionSlug, itemSlug, [options])`
+#### `elemeno.getCollectionItem(collectionSlug, itemSlug, [options])`
 
 ```ruby
 collectionItem = elemeno.getCollectionItem('recipes', 'apple-pie')
